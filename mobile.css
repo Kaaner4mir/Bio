@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Using a fallback color is good practice */
+  background: url('Images/Background2.jpg') center/100% 100% no-repeat; /* Mobil için farklı arka plan */
+  height: 100vh;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* Set initial opacity to 1 for no fade-in */
+  /* animation: zoomInOut 15s ease-in-out infinite; */ /* Remove zoomInOut animation */
+}
+
+.container {
+  margin: 50px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column; /* Resimleri dikey sırala */
+  position: absolute;
+  right: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container a {
+    opacity: 0; /* Set initial opacity to 0 for slide-in animation */
+    transform: translateX(0); /* Set initial transform for slide-in animation */
+    animation: slideInLeft 0.6s ease-out forwards; /* Re-enable slideInLeft animation */
+    display: block;
+    margin: 0 auto;
+}
+
+.instagram-link {
+    animation-delay: 0.8s;
+}
+
+.github-link {
+    animation-delay: 1.0s;
+}
+
+.linkedin-link {
+    animation-delay: 1.2s;
+}
+
+.gmail-link {
+    animation-delay: 1.4s;
+}
+
+.container img {
+  width: 300px;
+  /* Make sure the image's corners align with the container's rounded corners */
+  border-radius: 50px; /* Daha kıvrımlı kenarlar */
+  /* Using a smaller border-radius here (like 10px) is fine,
+     but ensure it's not larger than the container's 20px radius
+     if you want a clean look */
+  display: block; /* Good practice for images to remove potential extra space */
+  margin-bottom: 30px;
+  box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.7);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.9);
+}
+
+.instagram-link img {
+    width: 300px;
+    /* Make sure the image's corners align with the container's rounded corners */
+    border-radius: 50px;
+    /* Using a smaller border-radius here (like 10px) is fine,
+       but ensure it's not larger than the container's 20px radius
+       if you want a clean look */
+    display: block; /* Good practice for images to remove potential extra space */
+}
+
+.instagram-link img:hover {
+    box-shadow: 0 0 40px 10px rgba(225, 48, 108, 0.9),
+                0 0 40px 15px rgba(131, 58, 180, 0.7);
+}
+
+.github-link img {
+    width: 300px;
+    /* Make sure the image's corners align with the container's rounded corners */
+    border-radius: 50px;
+    /* Using a smaller border-radius here (like 10px) is fine,
+       but ensure it's not larger than the container's 20px radius
+       if you want a clean look */
+    display: block; /* Good practice for images to remove potential extra space */
+}
+
+.github-link img:hover {
+    box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.8),
+                0 0 40px 15px rgb(0, 0, 0);
+}
+
+.linkedin-link img {
+    width: 300px;
+    /* Make sure the image's corners align with the container's rounded corners */
+    border-radius: 50px;
+    /* Using a smaller border-radius here (like 10px) is fine,
+       but ensure it's not larger than the container's 20px radius
+       if you want a clean look */
+    display: block; /* Good practice for images to remove potential extra space */
+}
+
+.linkedin-link img:hover {
+    box-shadow: 0 0 40px 10px rgb(39, 115, 255),
+                0 0 40px 15px rgb(66, 188, 253);
+}
+
+.gmail-link img {
+    width: 300px;
+    /* Make sure the image's corners align with the container's rounded corners */
+    border-radius: 50px;
+    /* Using a smaller border-radius here (like 10px) is fine,
+       but ensure it's not larger than the container's 20px radius
+       if you want a clean look */
+    display: block; /* Good practice for images to remove potential extra space */
+}
+
+.gmail-link img:hover {
+    box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.9),
+                0 0 40px 15px rgba(255, 255, 255, 0.9);
+}
+
+.page-title {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 6em;
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 1);
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: center center;
+}
+
+.page-title span {
+    display: inline-block; /* Her harfin ayrı animasyon alması için */
+    opacity: 0; /* Set initial opacity to 0 for drop-in animation */
+    transform: translateY(100%); /* Set initial transform for drop-in animation */
+    animation: dropIn 0.6s ease-out forwards; /* Re-enable dropIn animation */
+}
+
+.page-title span:nth-child(1) { animation-delay: 0.1s; }
+.page-title span:nth-child(2) { animation-delay: 0.1s; } /* User's latest change */
+.page-title span:nth-child(3) { animation-delay: 0.1s; } /* User's latest change */
+.page-title span:nth-child(4) { animation-delay: 0.1s; } /* User's latest change */
+.page-title span:nth-child(5) { animation-delay: 0.1s; } /* User's latest change */
+.page-title span:nth-child(6) { animation-delay: 0.1s; } /* User's latest change */
+.page-title span:nth-child(7) { animation-delay: 0.1s; } /* User's latest change */
+.page-title span:nth-child(8) { animation-delay: 0.1s; } /* User's latest change */
+
+@keyframes dropIn {
+    from {
+        opacity: 0;
+        transform: translateY(100%); /* Başlangıç pozisyonu yukarıdan (dikeyde sağa kaymış gibi) */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Normal konumuna gel (dikeyde ortalanmış) */
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%); /* Soldan başla */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Normal konumuna gel */
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-100px); /* Yukarıdan başla */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row; /* Yan yana gelmelerini sağla */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.vertical-line {
+    position: absolute;
+    left: 50%;
+    top: 50%; /* Dikeyde ortala */
+    width: 4px;
+    height: 80vh; /* Yüksekliği kısalt */
+    background-color: #fff; /* Beyaz çizgi */
+    box-shadow: 0 0 25px 8px rgba(255, 255, 255, 0.9);
+    z-index: 1; /* Diğer öğelerin üzerinde olması için */
+    transform: translateY(-50%); /* Kendi yüksekliğinin yarısı kadar yukarı kaydırarak tam ortala */
+}
+
+/* Mobile specific styles */
+@media screen and (max-width: 768px) {
+  body {
+    background: url('Images/Background2.jpg') center/cover no-repeat;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    /* Other body styles might need adjustment for mobile */
+  }
+
+  .main-content {
+    flex-direction: column; /* Mobil cihazlarda dikey sırala */
+  }
+
+  .page-title {
+    font-size: 3em; /* Mobil için daha küçük font boyutu */
+    position: static; /* Mobil için statik konumlandırma */
+    transform: none; /* Dönüşümü kaldır */
+    text-align: center; /* Ortala */
+    margin-bottom: 20px;
+    left: auto;
+    top: auto;
+  }
+
+  .page-title span {
+    opacity: 0;
+    transform: translateY(100%);
+    animation: dropIn 0.6s ease-out forwards;
+  }
+
+  .container {
+    position: static; /* Mobil için statik konumlandırma */
+    transform: none; /* Dönüşümü kaldır */
+    margin-right: 0;
+    margin-left: 0;
+    align-items: center; /* Resimleri ortala */
+  }
+
+  .container a {
+    opacity: 0;
+    transform: translateX(0);
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .container img {
+    width: 200px; /* Mobil için daha küçük resim boyutu */
+    margin-bottom: 15px;
+  }
+
+  .vertical-line {
+    display: none; /* Mobil cihazlarda dikey çizgiyi gizle */
+  }
+}
