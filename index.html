@@ -31,5 +31,30 @@
             </a>
         </div>
     </div>
+
+    <script>
+  window.addEventListener('pageshow', function(event) {
+    // 'persisted' özelliği, sayfanın bfcache'den (geri/ileri önbelleği)
+    // yüklenip yüklenmediğini söyler.
+    if (event.persisted) {
+      
+      // .container içindeki tüm <a> etiketlerini bul
+      const links = document.querySelectorAll('.container a');
+      
+      // Her birinin üzerinden 'focus' (odak) durumunu kaldır.
+      // Bu, tarayıcıyı CSS durumunu yeniden hesaplamaya zorlar.
+      links.forEach(function(link) {
+        link.blur();
+      });
+
+      // Ekstra bir önlem olarak, o an aktif olan element neyse 
+      // ondan da focus'u kaldır.
+      if (document.activeElement) {
+        document.activeElement.blur();
+      }
+    }
+  });
+</script>
 </body>
+
 </html>
