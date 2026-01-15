@@ -6,7 +6,7 @@
 
 body {
   /* Using a fallback color is good practice */
-  background: url('Images/Background.jpg') center/100% 100% no-repeat;
+  background: url('Images/autumn_background.jpg') center/100% 100% no-repeat; /* Mobil için farklı arka plan */
   height: 100vh;
   font-family: sans-serif;
   display: flex;
@@ -17,7 +17,7 @@ body {
 }
 
 .container {
-  margin: 50px; 
+  margin: 50px;
   border-radius: 40px;
   display: flex;
   flex-direction: column; /* Resimleri dikey sırala */
@@ -55,8 +55,8 @@ body {
   width: 300px;
   /* Make sure the image's corners align with the container's rounded corners */
   border-radius: 50px; /* Daha kıvrımlı kenarlar */
-  /* Using a smaller border-radius here (like 10px) is fine, 
-     but ensure it's not larger than the container's 20px radius 
+  /* Using a smaller border-radius here (like 10px) is fine,
+     but ensure it's not larger than the container's 20px radius
      if you want a clean look */
   display: block; /* Good practice for images to remove potential extra space */
   margin-bottom: 30px;
@@ -72,24 +72,24 @@ body {
 .instagram-link img {
     width: 300px;
     /* Make sure the image's corners align with the container's rounded corners */
-    border-radius: 50px; /* Daha kıvrımlı kenarlar */
-    /* Using a smaller border-radius here (like 10px) is fine, 
-       but ensure it's not larger than the container's 20px radius 
+    border-radius: 50px;
+    /* Using a smaller border-radius here (like 10px) is fine,
+       but ensure it's not larger than the container's 20px radius
        if you want a clean look */
     display: block; /* Good practice for images to remove potential extra space */
 }
 
 .instagram-link img:hover {
-    box-shadow: 0 0 40px 10px rgba(225, 48, 108, 0.9),
-                0 0 40px 15px rgba(131, 58, 180, 0.7);
+    box-shadow: 0 0 40px 10px rgb(255, 255, 255),
+                0 0 40px 15px rgb(255, 255, 255);
 }
 
 .github-link img {
     width: 300px;
     /* Make sure the image's corners align with the container's rounded corners */
-    border-radius: 50px; /* Daha kıvrımlı kenarlar */
-    /* Using a smaller border-radius here (like 10px) is fine, 
-       but ensure it's not larger than the container's 20px radius 
+    border-radius: 50px;
+    /* Using a smaller border-radius here (like 10px) is fine,
+       but ensure it's not larger than the container's 20px radius
        if you want a clean look */
     display: block; /* Good practice for images to remove potential extra space */
 }
@@ -102,9 +102,9 @@ body {
 .linkedin-link img {
     width: 300px;
     /* Make sure the image's corners align with the container's rounded corners */
-    border-radius: 50px; /* Daha kıvrımlı kenarlar */
-    /* Using a smaller border-radius here (like 10px) is fine, 
-       but ensure it's not larger than the container's 20px radius 
+    border-radius: 50px;
+    /* Using a smaller border-radius here (like 10px) is fine,
+       but ensure it's not larger than the container's 20px radius
        if you want a clean look */
     display: block; /* Good practice for images to remove potential extra space */
 }
@@ -117,9 +117,9 @@ body {
 .gmail-link img {
     width: 300px;
     /* Make sure the image's corners align with the container's rounded corners */
-    border-radius: 50px; /* Daha kıvrımlı kenarlar */
-    /* Using a smaller border-radius here (like 10px) is fine, 
-       but ensure it's not larger than the container's 20px radius 
+    border-radius: 50px;
+    /* Using a smaller border-radius here (like 10px) is fine,
+       but ensure it's not larger than the container's 20px radius
        if you want a clean look */
     display: block; /* Good practice for images to remove potential extra space */
 }
@@ -150,13 +150,13 @@ body {
 }
 
 .page-title span:nth-child(1) { animation-delay: 0.1s; }
-.page-title span:nth-child(2) { animation-delay: 0.1s; }
-.page-title span:nth-child(3) { animation-delay: 0.1s; }
-.page-title span:nth-child(4) { animation-delay: 0.1s; }
-.page-title span:nth-child(5) { animation-delay: 0.1s; }
-.page-title span:nth-child(6) { animation-delay: 0.1s; }
-.page-title span:nth-child(7) { animation-delay: 0.1s; }
-.page-title span:nth-child(8) { animation-delay: 0.1s; }
+.page-title span:nth-child(2) { animation-delay: 0.1s; } /* User's latest change */
+.page-title span:nth-child(3) { animation-delay: 0.1s; } /* User's latest change */
+.page-title span:nth-child(4) { animation-delay: 0.1s; } /* User's latest change */
+.page-title span:nth-child(5) { animation-delay: 0.1s; } /* User's latest change */
+.page-title span:nth-child(6) { animation-delay: 0.1s; } /* User's latest change */
+.page-title span:nth-child(7) { animation-delay: 0.1s; } /* User's latest change */
+.page-title span:nth-child(8) { animation-delay: 0.1s; } /* User's latest change */
 
 @keyframes dropIn {
     from {
@@ -232,4 +232,57 @@ body {
     box-shadow: 0 0 25px 8px rgba(255, 255, 255, 0.9);
     z-index: 1; /* Diğer öğelerin üzerinde olması için */
     transform: translateY(-50%); /* Kendi yüksekliğinin yarısı kadar yukarı kaydırarak tam ortala */
+}
+
+/* Mobile specific styles */
+@media screen and (max-width: 768px) {
+  body {
+    background: url('Images/Background2.jpg') center/cover no-repeat;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    /* Other body styles might need adjustment for mobile */
+  }
+
+  .main-content {
+    flex-direction: column; /* Mobil cihazlarda dikey sırala */
+  }
+
+  .page-title {
+    font-size: 3em; /* Mobil için daha küçük font boyutu */
+    position: static; /* Mobil için statik konumlandırma */
+    transform: none; /* Dönüşümü kaldır */
+    text-align: center; /* Ortala */
+    margin-bottom: 20px;
+    left: auto;
+    top: auto;
+  }
+
+  .page-title span {
+    opacity: 0;
+    transform: translateY(100%);
+    animation: dropIn 0.6s ease-out forwards;
+  }
+
+  .container {
+    position: static; /* Mobil için statik konumlandırma */
+    transform: none; /* Dönüşümü kaldır */
+    margin-right: 0;
+    margin-left: 0;
+    align-items: center; /* Resimleri ortala */
+  }
+
+  .container a {
+    opacity: 0;
+    transform: translateX(0);
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .container img {
+    width: 200px; /* Mobil için daha küçük resim boyutu */
+    margin-bottom: 15px;
+  }
+
+  .vertical-line {
+    display: none; /* Mobil cihazlarda dikey çizgiyi gizle */
+  }
 }
